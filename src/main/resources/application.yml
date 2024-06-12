@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: "金太阳后端服务"
+
+Tcp:
+  server:
+    port: 8888
+
