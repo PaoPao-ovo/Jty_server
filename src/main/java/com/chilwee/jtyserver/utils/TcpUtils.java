@@ -8,7 +8,13 @@ public class TcpUtils {
     //响应的数据对象
     private Response response;
 
-//  静态方法，计算CRC校验值
+    public TcpUtils(){};
+
+    public TcpUtils(Response response) {
+        this.response = response;
+    }
+
+    //  静态方法，计算CRC校验值
     public static String getCRC2(byte[] bytes) {
         int CRC = 0x0000ffff;
         int POLYNOMIAL = 0x0000a001;
@@ -26,7 +32,16 @@ public class TcpUtils {
             }
         }
         //高低位转换
-        CRC = ( (CRC & 0x0000FF00) >> 8) | ( (CRC & 0x000000FF ) << 8);
+        CRC = ( (CRC & 0x000000FF ) << 8) | ( (CRC & 0x0000FF00) >> 8);
+
         return Integer.toHexString(CRC);
+    }
+
+    public Response getResponse() {
+        return response;
+    }
+
+    public void setResponse(Response response) {
+        this.response = response;
     }
 }
