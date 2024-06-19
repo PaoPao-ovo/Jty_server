@@ -1,26 +1,25 @@
-package com.chilwee.jtyserver.tcpserver;
+package com.chilwee.jtyserver.tcp;
 
-import com.chilwee.jtyserver.localthread.SocketThread;
+import com.chilwee.jtyserver.tcp.threads.SocketThread;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
-import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 
 @Component
-public class TcpServer {
+//TCP服务启动类
+public class TcpStarter {
 
     @Value("${Tcp.server.port}")
     private String port;
 
-    public TcpServer() {
+    public TcpStarter() {
 
     }
 
-    public TcpServer(String port) {
+    public TcpStarter(String port) {
         this.port = port;
     }
 

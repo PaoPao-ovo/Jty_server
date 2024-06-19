@@ -1,4 +1,4 @@
-package com.chilwee.jtyserver.utils.tcp;
+package com.chilwee.jtyserver.tcp.config.res;
 
 import org.springframework.stereotype.Component;
 
